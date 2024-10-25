@@ -1,8 +1,9 @@
-
-# 语雀导出文档工具
+![image](https://github.com/user-attachments/assets/9ecb31e3-9d72-4cf6-88d9-6b9ce7695f2c)
+# 语雀导出文档工具plus
+原项目连接（原项目只支持导出md，且图片与md分开）：https://github.com/renyunkang/yuque-exporter
 ### 功能：
 
-- 模拟用户浏览器操作一篇一篇导出 markdown 文档
+- 模拟用户浏览器操作一篇一篇导出 pdf/markdown 文档
 - 按照知识库目录导出文档
 - 支持导出失败重试
 - 导出文档中的图片到本地
@@ -11,12 +12,17 @@
 > ps: 后面两个功能是使用 python 实现，可以单独使用
 
 效果展示：
+1. pdf效果：
+![image](https://github.com/user-attachments/assets/e468c9a8-9687-4173-9b5a-88ae225e4cce)
+![image](https://github.com/user-attachments/assets/18cfb5bd-4238-4ffc-9d9e-d7ad722c9807)
 
+
+2. markdown效果：
 ![image.png](https://images.codingryken.eu.org/2023/05/91804cc3646d6356cd7458c9a12444fc.png)
 
 ![image.png](https://images.codingryken.eu.org/2023/05/4b3a4e4207ead71f15600806c12a5c1d.png)
 
-动图展示(旧版图，新版未更新图)：![image.png](./images/exporter.gif)
+
 
 ### 说明：
 
@@ -69,6 +75,43 @@ yarn
 | EXPORT_PATH | 非必须 | 指定导出路径，默认为当前工作目录下的 output 目录(自动创建) |
 
 
+##### 2.1. pdf批量导出
+
+- **ubuntu**
+```bash
+# 第一次运行时，使用 USER + PASSWORD 登录
+# USER=xxx PASSWORD=xxx node export-pdf.js
+USER=xxx PASSWORD=xxx EXPORT_PATH=/path/to/exporter node export-pdf.js
+
+# 登录一次后会保存 cookie，之后使用cookie登录
+# node export-pdf.js
+EXPORT_PATH=/path/to/exporter node export-pdf.js
+```
+
+- **windows**
+```bash
+# 1. cmd
+set USER="xxx"
+set PASSWORD="xxx"
+# set EXPORT_PATH=/path/to/exporter
+node export-pdf.js
+
+# 2. powershell
+# $env:USER="xxx";$env:PASSWORD="xxx"; node .\export-pdf.js
+$env:USER="xxx";$env:PASSWORD="xxx";$env:EXPORT_PATH="/path/to/exporter"; node .\export-pdf.js
+```
+
+- **MacOS**
+```bash
+# 密码有特殊字符，建议单引号处理
+export USER='xxx'
+export PASSWORD='xxx'
+
+# 运行
+node export-pdf.js
+```
+
+##### 2.2. markdown批量导出
 - **ubuntu**
 ```bash
 # 第一次运行时，使用 USER + PASSWORD 登录

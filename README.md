@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/9ecb31e3-9d72-4cf6-88d9-6b9ce7695f2c)
 # 语雀导出文档工具plus
 原项目连接（原项目只支持导出md，且图片与md分开）：https://github.com/renyunkang/yuque-exporter
 ### 功能：
